@@ -26,13 +26,30 @@ public class Ball : MonoBehaviour {
             {
                 click = true;
                 print("mouse clicked, launch ball");
-                this.rigidbody2D.velocity = new Vector2(2, 10);
+                this.rigidbody2D.velocity = new Vector2(10f, 20f);
             }
         }
         // A line to prevent the game to fall in a loop where the ball moves horizontally
         if (this.rigidbody2D.velocity.y == 0){
-            this.rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, Random.Range(-0.2f, 0.2f));
-            print("on est censé changer sa vitesse verticale");
+            float modif;
+            if (Random.Range(0,2)<1){
+                modif = 0.5f;
+            }else{
+                modif = -0.5f;
+            }
+            this.rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, modif);
+        }
+
+        // A line to prevent the game to fall in a loop where the ball moves vertically
+        if (this.rigidbody2D.velocity.x == 0){
+            float modif;
+            if (Random.Range(0, 2) < 1){
+                modif = 0.5f;
+            }
+            else{
+                modif = -0.5f;
+            }
+            this.rigidbody2D.velocity = new Vector2(modif, rigidbody2D.velocity.y);
         }
 
         //Test de la ligne ci-dessus

@@ -33,17 +33,16 @@ public class Brick : MonoBehaviour {
 
     private void HandleHits(){
         timesHit += 1;
-        if (timesHit >= maxHit)
-        {
+        if (timesHit >= maxHit){
             //Destroy if he got no more HP 
             Destroy(this.gameObject);
+            numberOfBreakableBricks--;
             //Do we earn a bonus or malus ? 
             bonusSpawner.BrickDestroyed(this.transform.position);
             //Checking if it's the last block, if so, load the next level
             levelManager.BrickDestroyed();
         }
-        else
-        {
+        else{
             LoadSprites();
         }
     }
@@ -53,7 +52,7 @@ public class Brick : MonoBehaviour {
         if (hitSprites[spriteIndex]){
             this.GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
         } else {
-            Debug.Log("There is a missing sprite for a " + this.gameObject);
+            Debug.LogError("There is a missing sprite for a " + this.gameObject);
         }
     }
     
@@ -65,10 +64,6 @@ public class Brick : MonoBehaviour {
 
     private void OnDestroy()
     {   
-        if (isBreakable){
-            numberOfBreakableBricks--;
-            Debug.LogWarning(numberOfBreakableBricks);
-        }
         
     }
 }

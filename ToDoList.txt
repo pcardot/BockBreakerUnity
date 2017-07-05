@@ -10,10 +10,14 @@ les prites et les sons.
 	  Pour les verticales, a priori l'etape suivante de donner le controle des rebonds sur le padle
 	  devrait gerer ca. Sauf peut etre dans le cas de briques incassables A tester donc
 	  (sinon rajouter le meme genre de systeme que precedemment pour le vertical)
-	- 91 Automated play testing, rajouter une possibilite pour le jeu de jouer tout seul pour tester
+	+ 91 Automated play testing, rajouter une possibilite pour le jeu de jouer tout seul pour tester
 	- 92 Build and share to the web : /!\ Revenir la quand fini
 	+ 93 Retirer le bug du compte de brique breakable qui plante quand tu perds et rejoue (DONE)
 	     (utilisation de OnDestroy, au lieu de verifier manuellement les bons endroits)
+	  En fait le OnDestroy va pas fonctionner vu que au changement de scene ca declenche
+	  la fonction, donc quand on perd et que le looseScreen doit charger, ca detruit
+	  toutes les briques et considere qu'on a gagne. Il faut donc verifier toutes les entrees.
+	  Et decremente en consequence.
 	- 94 Changer le collider de la padlle pour controller plus le rebond (possibilite
 	  de le faire de forme ovoide ?) Mettre a jour l'image du paddle
 	- 95 Faire le code extensible (regarder un peu partout verifier que c'est clean

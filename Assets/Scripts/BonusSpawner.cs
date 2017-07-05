@@ -5,7 +5,7 @@ public class BonusSpawner : MonoBehaviour {
     public static BonusSpawner bonusSpawner = null;
 
     //TODO Create bonus class
-    private Stack<Bonuses> bonusNotInUse;
+    //private Stack<Bonuses> bonusNotInUse;
 	// Use this for initialization
 	void Awake () {
 	    if (!bonusSpawner){
