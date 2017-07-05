@@ -1,25 +1,44 @@
 TODO list :
 
-Pas prioritaire, mais a faire a un moment donne quand meme : des niveaux + beaux et changer
-les sprites et les sons. 
+Pas prioritaire, mais a faire a un moment donna quand meme : des niveaux + beaux et changer
+les prites et les sons. 
 
 
 1/ Finir les lecons du cours et verifier que je suis bien a jour a ce niveau la
+	+ 90 Stop boring loops, les boucles horizontales ont ete geree. (si vitesse verticale nulle
+	  alors on lui donne une impulsion aleatoire dans un sens ou l'autre)
+	  Pour les verticales, a priori l'etape suivante de donner le controle des rebonds sur le padle
+	  devrait gerer ca. Sauf peut etre dans le cas de briques incassables A tester donc
+	  (sinon rajouter le meme genre de systeme que precedemment pour le vertical)
+	- 91 Automated play testing, rajouter une possibilite pour le jeu de jouer tout seul pour tester
+	- 92 Build and share to the web : /!\ Revenir la quand fini
+	+ 93 Retirer le bug du compte de brique breakable qui plante quand tu perds et rejoue (DONE)
+	     (utilisation de OnDestroy, au lieu de verifier manuellement les bons endroits)
+	- 94 Changer le collider de la padlle pour controller plus le rebond (possibilite
+	  de le faire de forme ovoide ?) Mettre a jour l'image du paddle
+	- 95 Faire le code extensible (regarder un peu partout verifier que c'est clean
+	  et aussi bien verifier les commentaires, generer une doc ?)
+	- 96 Particle system (animation de cassage de brique)
+	- 97 Upgrade to unity 5 mais ca devrait se faire facilement.
+	- 98 
 
-2/  Ajouter un systeme de vie et de points (3 vies au debut). 
-    Peut-etre devoir rajouter un objet player qui va garder ces infos. Vie d'abord puis points
+2/  Ajouter un systeme de vie et de points (3 pour la totalite). 
+    Peut etre devoir rajouter un objet player qui va garder ces infos. Vie d'abord puis points
     Points en fonction du temps ?
 
 3/  Mettre en place un systeme de bonus/malus quand on casse une brique il y a des chances pour
     qu'un bonus ou un malus tombe, que l'utilisateur peut attraper ou non.
 
 
-4/  Quels types de bonus/malus ? 
+4/  Quels types de bonus/malus ? (mettre a jour l'automated play testing en consequence pour recuperer les bonus/malus)
 	- Changement taille du padle : double ou retrecit par deux  (penser a ajouter un scale pour
 	  restreindre les mouvements du padle a l'ecran)
 	- Vie supplementaire
 	- Multiball ? (Comment faire pour eviter les collisions des balles entre elles ? exit rigidbody?
-	  et gestion soi-meme des rebonds ?)
-	- Un ralentissement/acceleration de la vitesse de la balle (temporaire ? permanant ? on normalise la vitesse de la balle ?)
+	  et gestion soit meme des rebonds ?)
+	- Un ralentissement/acceleration de la vitesse de la balle (temporaire ? permanant ?)
 	- Une balle qui passe tout droit en cassant tout sur son passage ? (faudra ptetre gerer toutes
 	  les collisions manuellement si on fait ca) Ca casse meme les indestructibles ?
+
+
+5/ Build et mettre en ligne
