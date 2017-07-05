@@ -1,0 +1,25 @@
+TODO list :
+
+Pas prioritaire, mais a faire a un moment donne quand meme : des niveaux + beaux et changer
+les sprites et les sons. 
+
+
+1/ Finir les lecons du cours et verifier que je suis bien a jour a ce niveau la
+
+2/  Ajouter un systeme de vie et de points (3 vies au debut). 
+    Peut-etre devoir rajouter un objet player qui va garder ces infos. Vie d'abord puis points
+    Points en fonction du temps ?
+
+3/  Mettre en place un systeme de bonus/malus quand on casse une brique il y a des chances pour
+    qu'un bonus ou un malus tombe, que l'utilisateur peut attraper ou non.
+
+
+4/  Quels types de bonus/malus ? 
+	- Changement taille du padle : double ou retrecit par deux  (penser a ajouter un scale pour
+	  restreindre les mouvements du padle a l'ecran)
+	- Vie supplementaire
+	- Multiball ? (Comment faire pour eviter les collisions des balles entre elles ? exit rigidbody?
+	  et gestion soi-meme des rebonds ?)
+	- Un ralentissement/acceleration de la vitesse de la balle (temporaire ? permanant ? on normalise la vitesse de la balle ?)
+	- Une balle qui passe tout droit en cassant tout sur son passage ? (faudra ptetre gerer toutes
+	  les collisions manuellement si on fait ca) Ca casse meme les indestructibles ?
