@@ -6,6 +6,7 @@ public class Brick : MonoBehaviour {
     public Sprite[] hitSprites;
     public static int numberOfBreakableBricks = 0;
     public AudioClip crack;
+    public GameObject smoke;
 
     private LevelManager levelManager;
     private BonusSpawner bonusSpawner;
@@ -34,18 +35,30 @@ public class Brick : MonoBehaviour {
     private void HandleHits(){
         timesHit += 1;
         if (timesHit >= maxHit){
-            //Destroy if he got no more HP 
-            Destroy(this.gameObject);
-            numberOfBreakableBricks--;
-            //Do we earn a bonus or malus ? 
-            bonusSpawner.BrickDestroyed(this.transform.position);
-            //Checking if it's the last block, if so, load the next level
-            levelManager.BrickDestroyed();
+            //The object doesn't have any more HP, destroying routine
+            SelfDestruct();
         }
         else{
             LoadSprites();
         }
     }
+
+    private void SelfDestruct(){
+        //Update the count of breakable objects
+        numberOfBreakableBricks--;
+
+        //Create a puff smoke
+        GameObject smokePuff = Instantiate(smoke, transform.position, Quaternion.identity) as GameObject;
+        smokePuff.particleSystem.startColor = this.GetComponent<SpriteRenderer>().color;
+
+        //Do we earn a bonus or malus ? 
+        bonusSpawner.BrickDestroyed(this.transform.position);
+
+        //Checking if it's the last block, if so, load the next level
+        levelManager.BrickDestroyed();
+        Destroy(this.gameObject);
+    }
+
 
     private void LoadSprites(){
         int spriteIndex = timesHit - 1;

@@ -18,11 +18,11 @@ les prites et les sons.
 	  la fonction, donc quand on perd et que le looseScreen doit charger, ca detruit
 	  toutes les briques et considere qu'on a gagne. Il faut donc verifier toutes les entrees.
 	  Et decremente en consequence.
-	- 94 Changer le collider de la padlle pour controller plus le rebond (possibilite
+	+ 94 Changer le collider de la padlle pour controller plus le rebond (possibilite
 	  de le faire de forme ovoide ?) Mettre a jour l'image du paddle
 	- 95 Faire le code extensible (regarder un peu partout verifier que c'est clean
 	  et aussi bien verifier les commentaires, generer une doc ?)
-	- 96 Particle system (animation de cassage de brique)
+	+ 96 Particle system (animation de cassage de brique)
 	- 97 Upgrade to unity 5 mais ca devrait se faire facilement.
 	- 98 
 
